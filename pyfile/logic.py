@@ -10,11 +10,8 @@ def file_exists(in_file):
 def copy_file(in_path, out_path):
     """Input: input file name, string; output file name, string;
     Copies file content from in_path to out_path
-    Return: --
+    Return: True if file was copied, False otherwise
     """
-
-    # in_path = input("Input file: ")
-    # out_path = input("Out file: ")
 
     if file_exists(in_path):
         in_file = open(in_path, 'r')
@@ -26,9 +23,9 @@ def copy_file(in_path, out_path):
         out_file.close()
         in_file.close()
 
-        print("Copy done")
+        return True
     else:
-        print ("Input ot output path not exists")
+        return False
 
 if __name__ == '__main__':
     copy_file()

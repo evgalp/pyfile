@@ -28,18 +28,19 @@ class Window(Frame):
         self.exit_btn = Button(root, text="Exit", command=self.client_exit)
         self.exit_btn.grid(row=2, column=1, sticky=W)
 
-        self.test_label = Label(root, text="none")
-        self.test_label.grid(row=4, column=0, sticky=W)
+        self.result_label = Label(root, text="none")
+        self.result_label.grid(row=4, column=0, sticky=W)
 
     def get_entry_text(self, entry_name):
         return entry_name.get()
 
     def client_copy_file(self):
-        
         in_path = self.get_entry_text(self.in_file_entry)
         out_path = self.get_entry_text(self.out_file_entry)
-
-        logic.copy_file(in_path, out_path)
+        if logic.copy_file(in_path, out_path):
+            self.result_label.config(text="Copying done")
+        else:
+            self.result_label.config(text="Copying failed")
 
 
 
