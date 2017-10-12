@@ -7,14 +7,14 @@ def file_exists(in_file):
     """
     return os.path.exists(in_file) and os.path.isfile(in_file)
 
-def copy_file():
+def copy_file(in_path, out_path):
     """Input: input file name, string; output file name, string;
     Copies file content from in_path to out_path
     Return: --
     """
 
-    in_path = input("Input file: ")
-    out_path = input("Out file: ")
+    # in_path = input("Input file: ")
+    # out_path = input("Out file: ")
 
     if file_exists(in_path):
         in_file = open(in_path, 'r')
