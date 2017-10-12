@@ -1,6 +1,5 @@
 import os
 import sys
-from sys import argv
 
 def file_exists(in_file):
     """Input: file name, string
