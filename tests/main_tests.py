@@ -2,8 +2,6 @@ from nose.tools import *
 from pyfile.main import *
 import os
 
-# print(str(os.getcwd())
-
 def test_first():
     assert_equal("1", "1")
 

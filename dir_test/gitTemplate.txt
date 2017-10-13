@@ -1,0 +1,15 @@
+1. Create a repo on github
+2. In local folder run 
+		git init
+	-to index existing files:
+		git add *
+	-set master branch as the one to push on
+		git remote add origin https://github.com/gitHubUser/repoName.git
+		git push -u origin master
+
+3. To deploy on Heroku:
+		heroku create
+		git push heroku master
+
+4. To check if it works on heroku:
+		heroku open
