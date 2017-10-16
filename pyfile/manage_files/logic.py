@@ -29,5 +29,16 @@ def rename_files(files, prefix, ext, out_path):
         i += 1
 
 if __name__ == '__main__':
-    files_list = get_files(r"E:\torrent_evg\screens\witcher3", ".png")
-    rename_files(files_list, "witcher_", ".png", r"E:\torrent_evg\screens\witcher3")
+
+    input_dir = str(input("Input directory path: "))
+    input_ext = str(input("Input extension: "))
+
+    output_prefix = str(input("Output prefix: "))
+    output_ext = str(input("Output extension: "))
+    output_dir = str(input("Output directory path: "))
+
+    files_list = get_files(input_dir, input_ext)
+    rename_files(files_list, output_prefix, output_ext, output_dir)
+
+
+    # E:\work_evg\tutorial\python\pyfile\dir_test
