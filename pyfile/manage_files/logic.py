@@ -14,14 +14,12 @@ def get_files(path, ext):
 
     return file_paths_arr
 
-# print(get_files(r"E:\work_evg\tutorial\python\pyfile\dir_test", ".png"))
-
 def rename_files(files, prefix, ext, out_path):
     """Input:
          -files - array of paths to files, list
-         -prefix - rename prefix, string
+         -prefix - rename prefix, raw string
          -ext - file extension with dot, string - as (".txt")
-         -out_path - path to put renamed files in
+         -out_path - path to put renamed files in, raw string
        Changes file names to a format of "prefix_i.ext"
        Return --
     """
@@ -30,4 +28,6 @@ def rename_files(files, prefix, ext, out_path):
         os.rename(file_name, os.path.join(out_path, prefix + str(i) + ext))
         i += 1
 
-# rename_files(get_files(r"E:\work_evg\tutorial\python\pyfile\dir_test", ".png"), "a_", ".png", r"E:\work_evg\tutorial\python\pyfile\dir_test")
+if __name__ == '__main__':
+    files_list = get_files(r"E:\torrent_evg\screens\witcher3", ".png")
+    rename_files(files_list, "witcher_", ".png", r"E:\torrent_evg\screens\witcher3")
