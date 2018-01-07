@@ -9,6 +9,9 @@ def directory_is_empty(src):
     else:
         return False
 
+def modify_existing_path(path):
+    pass
+
 def copy_all_files(src, dst):
     files = os.listdir(src)
     total = len([name for name in os.listdir(src)])
@@ -22,26 +25,31 @@ def copy_all_files(src, dst):
 
     print("Done")
 
-def build_mix(in_path):
+def build_mix(in_path, ignore=[]):
+    ignore = sys.argv[2:]
+
     os.makedirs(os.path.join(in_path, 'mix'), exist_ok=True)
     print('mix folder created')
 
     mix_path = os.path.join(in_path, 'mix')
     print('Mix folder path is {0}'.format(mix_path))
+
     directories = os.listdir(in_path)
     directories.remove('mix')
 
+    # excluge ignored directories
+    for directory in directories:
+        if directory in ignore:
+            directories.remove(directory)
+
+    # copy from non-ignored directories
     for directory in directories:
         directory_path = os.path.join(in_path, directory)
         copy_all_files(directory_path, mix_path)
 
-
 inpath = sys.argv[1]
-
 build_mix(inpath)
 
-
-#
 # inpath = sys.argv[1]
 # outpath = sys.argv[2]
 #
