@@ -9,9 +9,6 @@ def directory_is_empty(src):
     else:
         return False
 
-def modify_existing_path(path):
-    pass
-
 def copy_all_files(src, dst):
     files = os.listdir(src)
     total = len([name for name in os.listdir(src)])
